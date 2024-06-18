@@ -6,6 +6,8 @@ import { canActivateChildGuard } from './guards/can-activate-child.guard';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { SettingsComponent } from './components/admin/settings/settings.component';
+import { FormComponent } from './components/form/form.component';
+import { canDeactivateGuard } from './guards/can-deactivate.guard';
 
 const routes: Routes = [
 
@@ -27,6 +29,15 @@ const routes: Routes = [
       { path: 'settings', component: SettingsComponent }
     ]
   },
+
+// green canDeactivate
+  {
+    path: 'form',
+    component: FormComponent,
+    canDeactivate: [canDeactivateGuard]
+  },
+
+
 
 
 
