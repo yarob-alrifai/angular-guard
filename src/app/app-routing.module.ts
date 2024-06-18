@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { SettingsComponent } from './components/admin/settings/settings.component';
 import { FormComponent } from './components/form/form.component';
 import { canDeactivateGuard } from './guards/can-deactivate.guard';
+import { DataComponent } from './components/data/data.component';
+import { ResolveService } from './guards/resolve.service';
 
 const routes: Routes = [
 
@@ -38,7 +40,11 @@ const routes: Routes = [
   },
 
 
-
+  {
+    path: 'data',
+    component: DataComponent,
+    resolve: { data: ResolveService }
+  },
 
 
 
